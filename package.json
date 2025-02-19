@@ -1,13 +1,17 @@
 {
-	"name": "auto-watch-terminals",
-	"displayName": "auto-watch-terminals",
+	"name": "auto-open-terminals",
+	"displayName": "Auto Open Terminals",
 	"description": "Open up a terminal for each configured folder in the workspace and run commands",
+	"version": "0.0.2",
+	"private": true,
+	"publishConfig": {
+		"tag": "latest"
+	},
 	"author": {
 		"name": "Rune Bjerke",
 		"email": "vscode@green.spoox.org",
 		"url": "https://github.com/sp00x"
 	},
-	"version": "0.0.1",
 	"engines": {
 		"vscode": "^1.96.0"
 	},
@@ -18,9 +22,9 @@
 	"main": "./out/extension.js",
 	"contributes": {
 		"configuration": {
-			"title": "Auto watch terminals settings",
+			"title": "Auto Open Terminals settings",
 			"properties": {
-				"auto-watch-terminals.configurations": {
+				"auto-open-terminals.configurations": {
 					"type": "array",
 					"default": [],
 					"description": "Folder configurations"
@@ -29,13 +33,14 @@
 		},
 		"commands": [
 			{
-				"command": "auto-watch-terminals.open",
-				"title": "Open watch terminals"
+				"command": "auto-open-terminals.open",
+				"title": "Open terminals for configured folders"
 			}
 		]
 	},
 	"scripts": {
 		"vscode:prepublish": "npm run compile",
+		"build": "npm run compile",
 		"compile": "tsc -p ./",
 		"watch": "tsc -watch -p ./",
 		"pretest": "npm run compile && npm run lint",
@@ -43,15 +48,16 @@
 		"test": "vscode-test"
 	},
 	"devDependencies": {
-		"@types/vscode": "^1.96.0",
 		"@types/mocha": "^10.0.10",
-		"@types/node": "20.x",
+		"@types/node": "^20",
+		"@types/vscode": "^1.96.0",
 		"@typescript-eslint/eslint-plugin": "^8.17.0",
 		"@typescript-eslint/parser": "^8.17.0",
-		"eslint": "^9.16.0",
-		"typescript": "^5.7.2",
 		"@vscode/test-cli": "^0.0.10",
-		"@vscode/test-electron": "^2.4.1"
+		"@vscode/test-electron": "^2.4.1",
+		"@vscode/vsce": "^3.2.2",
+		"eslint": "^9.16.0",
+		"typescript": "^5.7.2"
 	},
 	"__metadata": {
 		"size": 55555760

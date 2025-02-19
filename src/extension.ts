@@ -17,14 +17,14 @@ type Configuration = {
 // Your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
 
-	const disposable = vscode.commands.registerCommand('auto-watch-terminals.open', async () => {
+	const disposable = vscode.commands.registerCommand('auto-open-terminals.open', async () => {
 
 		if (vscode.workspace.workspaceFolders && vscode.workspace.workspaceFile) {
 
-			let configuration = vscode.workspace.getConfiguration("auto-watch-terminals");
+			let configuration = vscode.workspace.getConfiguration("auto-open-terminals");
 			let configurations = configuration.get<Configuration[]>("configurations");
 			if (!configurations) {
-				vscode.window.showErrorMessage('No configurations found for auto-watch-terminals');
+				vscode.window.showErrorMessage('No configurations found for auto-open-terminals');
 				return;
 			}
 		
