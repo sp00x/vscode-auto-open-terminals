@@ -34,7 +34,7 @@
 		"commands": [
 			{
 				"command": "auto-open-terminals.open",
-				"title": "Open terminals for configured folders"
+				"title": "AutoOpenTerminals: open terminals"
 			}
 		]
 	},
